@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="% static "style.css" %" type="text/css" media="all">
+    <title style="font-family:'Courier New', Courier, monospace">Signaure Matching</title>
+    </link>
+</head>
+
+<body style="background-image: url('{% static "microsoft.jpg" %}'); background-repeat: no-repeat;
+background-size:50%; ">
+    <h1 style="font-family:sans-serif; text-shadow: 2px 2px 8px #C0C0C0; margin-top: 4rem"><marquee behavior="alternate">SIGNATURE  MATCHING  SYSTEM</marquee></h1>
+    <div class="col-sm-12 col-md-5 col-lg-5 mx-auto my-auto" style="margin-top: 7rem">
+        <div class="card my-5 shadow-lg p-3 rounded ml-6" >
+            <div class="card-body bg-gradient-secondary" style="margin-top: 1rem">
+                <hr class="my-3 mb-5">
+                <form  class="bg-gradient-secondary" method="POST" action="/polls/next" enctype="multipart/form-data" >
+                    {% csrf_token %} 
+                    <div class="form-label-group mb-4">
+                        <input type="text" name="idi" class="form-control" placeholder="Enter Your Name" 
+                            required>
+                    </div>
+                    <div class="form-label-group mb-4">
+                        <input type="file" name="myImage" class="form-control" 
+                            required>
+                    </div>
+                    <button class="btn btn-primary text-uppercase " type="submit" style="margin-left: 40%" ">Submit File</button>
+                    <hr class="my-4">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

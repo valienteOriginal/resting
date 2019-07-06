@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    </link>
+    <!--<style type="text/css">
+            #spinner{
+                width: 120px;
+                height: 120px;
+                background: transparent;
+                border-left: 10px solid gray;
+                border-right: 10px solid lightgreen;
+                border-top: 10px solid gray;
+                border-bottom: 10px solid lightgreen;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -60px;
+                margin-top: -60px;
+                border-radius: 50%;
+                animation: loader 2s linear infinite;
+            }
+            @keyframes loader{
+                0%{
+                    opacity:0.5;
+                }
+                100%{
+                    transform:rotate(360deg);
+                }
+            }
+        </style>-->
+</head>
+<body >
+    <!-- Header -->
+    <div class="container-field">
+        <div class="row">
+            <header class="text-center pt-5 mt-4 mb-4 col-md-12" , style="background-color:coral">
+                <div class="container">
+                    <h1 class="font-weight-light text-white">RESULT</h1>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                {% for element in dictr %}
+                    <div class="card border-0 shadow raisedbox mt-5 ml-5" style="width: 40%; display: inline-block">
+                        {% load static %}
+                        {% static "" as baseUrl %}
+                        <img src="{{ baseUrl }}{{element.path}}" class="card-img-top" >
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">{{element.person}}</h5>
+                            <div class="card-text text-black-50">{{element.ans}} %</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!--<script type="text/javascript">
+
+            function myfun(){
+                var test=setTimeout(loadPage,3000)
+            }
+        </script>-->
+    </div>
+</body>
+
+</html>
